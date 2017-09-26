@@ -1,1 +1,2 @@
+web: gunicorn gettingstarted.wsgi
 web: python weatherch4.py runserver 0.0.0.0:5000
