@@ -1,1 +1,1 @@
-web: gunicorn weatherch4.py:app
+web: gunicorn weatherch4:app
