@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request,redirect,url_for
 import requests
 import sqlite3 as sql
-app = Flask(__name__)
 import time
+
+app = Flask(__name__)
+
 
 
 list1 = [] 
