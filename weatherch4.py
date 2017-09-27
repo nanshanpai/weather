@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request,redirect,url_for
 import requests
 import sqlite3 as sql
-import time
+
 
 app = Flask(__name__)
 
@@ -23,8 +23,8 @@ def index():
          citycloud = ""
          Tcitytem = ""
          citytime =""
-         timenow = ""
-         time_today = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+         
+         
          chabtn = ""
          con = sql.connect("weather.db")
          cur = con.cursor()
