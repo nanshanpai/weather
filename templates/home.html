@@ -6,7 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-Language" content="zh-cn" />
 </head>
-<body>
+<body {text-align:center;}>
+
 <style type="text/css">
 h1 {color: red}
 p {color: blue}
@@ -16,7 +17,7 @@ p {color: blue}
 <h1 align="center">天气查询系统</h1>
 
 <p>天气数据来自心知天气</p>
-
+<div align="center">
 <form align="center" action="." method = "POST">
 <input type="text" name="text">
 <input type="submit" name="chabtn" value ="查询">
@@ -24,6 +25,7 @@ p {color: blue}
 <input type="submit" name="helpbtn" value="帮助">
 <input type="submit" name="gzbtn" value="更正">
 </form>
+<div>
 <p align="center">{{cityming}}  {{citycloud}} </p> 
 <p align="center">{{Tcitytem}} {{citytime}} </p> 
 <p align="center">{{x}}  {{y}} </p> 

@@ -2,7 +2,7 @@ from flask import Flask, render_template, request,redirect,url_for
 import requests
 import sqlite3 as sql
 app = Flask(__name__)
-
+import time
 
 
 list1 = [] 
@@ -21,16 +21,20 @@ def index():
          citycloud = ""
          Tcitytem = ""
          citytime =""
-         
+         timenow = ""
+         time_today = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
          chabtn = ""
          con = sql.connect("weather.db")
          cur = con.cursor()
           
          city = request.form['text']
-         
+         timenow = (time_today,)
          cur.execute("select city from chaxun")
          citylist =  cur.fetchall()
+         print(citylist)
          i = (city,)
+         
+         
          try:
               if i in citylist:
                    a = ""
@@ -42,7 +46,7 @@ def index():
                    t = (city,)
                    con = sql.connect("weather.db")
                    cur = con.cursor()
-                   cur.execute("select * from chaxun where city=?",t)
+                   cur.execute("select * from chaxun where city=? and ctime=date('now')",t)
                    trow = cur.fetchone()
                    con.commit()
                    x = trow[0]
